@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import HeaderItem from "../components/pages/home/HeaderItem";
+import axios from "axios";
+import { useEffect } from "react";
 export interface IHeaderItem {
   id: number;
   title: string;
@@ -12,6 +14,43 @@ interface IOption {
 }
 
 const Home: NextPage = () => {
+  const getNews = async () => {
+    const options = {
+      method: "GET",
+      url: "https://gaialens-esg-news.p.rapidapi.com/news",
+      params: { companyname: "Apple Inc." },
+      headers: {
+        "X-RapidAPI-Key": "a3f84fc8f4msh10b500b9516143cp1039b7jsn7fc28ed05dbe",
+        "X-RapidAPI-Host": "gaialens-esg-news.p.rapidapi.com",
+      },
+    };
+    try {
+      const res = await axios.request(options);
+      console.log("res after getting news", res.data);
+      if (res.data) {
+        postNews(res.data[0]);
+      }
+    } catch (e: any) {
+      console.log("err", e.message);
+    }
+  };
+
+  const postNews = async (data: any) => {
+    try {
+      const resp = await axios.post(
+        "http://localhost:3000/api/store-news",
+        data
+      );
+      console.log("response after storing news", resp.data);
+    } catch (err) {
+      // Handle Error Here
+      console.error(err);
+    }
+  };
+  useEffect(() => {
+    getNews();
+  }, []);
+
   const headerOptions: IHeaderItem[] = [
     {
       id: 1,
