@@ -18,7 +18,7 @@ const SingleNewsContainer: React.FC<{ singleNews: ISingleNews }> = ({
       <h6 className=" text-blue-700 my-2">News | {convertedDate}</h6>
       <h5 className="my-2">{title}</h5>
 
-      <a href={url} className="underline text-gray-400">
+      <a href={url} target="_blank" className="underline text-gray-400">
         {url}
       </a>
     </div>
