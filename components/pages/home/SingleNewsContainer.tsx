@@ -1,10 +1,6 @@
 import React from "react";
-export interface ISingleNews {
-  id: number;
-  title: string;
-  url: string;
-  date: string;
-}
+import { ISingleNews } from "../../../pages";
+
 const SingleNewsContainer: React.FC<{ singleNews: ISingleNews }> = ({
   singleNews,
 }) => {
