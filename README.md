@@ -7,3 +7,5 @@ Since the given api only returns one news item per call, filtering functionality
 3. Make sure docker is installed in your machine. Then run "docker compose up -d"
 4. run the command "npx prisma migrate dev"
 5. run the command "yarn dev"
+
+GitHub Repository: https://github.com/solayman-bd/next-typescript-prisma-assignment
