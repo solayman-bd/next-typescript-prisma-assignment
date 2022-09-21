@@ -1,11 +1,12 @@
 import axios from "axios";
+
 export const getNews = async () => {
   const options = {
     method: "GET",
     url: "https://gaialens-esg-news.p.rapidapi.com/news",
     params: { companyname: "Apple Inc." },
     headers: {
-      "X-RapidAPI-Key": "72098cc78fmshd268d4519c44e79p175631jsn345335b9ed94",
+      "X-RapidAPI-Key": "f7205cfaaemsh98bf9eabc748f01p166360jsn4b5f2989d96f",
       "X-RapidAPI-Host": "gaialens-esg-news.p.rapidapi.com",
     },
   };
