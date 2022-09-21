@@ -4,6 +4,7 @@ import { ISingleNews } from "../../../pages";
 const SingleNewsContainer: React.FC<{ singleNews: ISingleNews }> = ({
   singleNews,
 }) => {
+  //Formatting the date as per requirement
   const options: Intl.DateTimeFormatOptions = {
     weekday: "long",
     year: "numeric",

@@ -1,5 +1,5 @@
 import axios from "axios";
-
+//This function get the news form the apis
 export const getNews = async () => {
   const options = {
     method: "GET",
@@ -13,6 +13,7 @@ export const getNews = async () => {
   return await axios(options);
 };
 
+//This function saves the data to the database
 export const postNews = async (data: any) => {
   try {
     const resp = await axios.post("http://localhost:3000/api/store-news", data);

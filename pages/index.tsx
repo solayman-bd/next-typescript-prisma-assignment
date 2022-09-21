@@ -92,7 +92,9 @@ const headerOptions: IHeaderItem[] = [
   },
 ];
 export const getServerSideProps: GetServerSideProps = async () => {
+  //Getting data form the api
   const { data } = await getNews();
+  //If data available in the response, saving it to the database
   if (data) {
     await postNews(data[0]);
   }
